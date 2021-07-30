@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+import {  Route, Switch } from 'react-router-dom';
 import './App.css';
+import Calculator from './components/Calculator';
+import Getdatafirebase from './components/Getdatafirebase';
+import Loginform from './components/Loginform';
+import Navbar from './components/Navbar';
+import Oneinoutdatafirebase from './components/Oneinoutdatafirebase';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar/>
+      <Switch>
+  <Route  path='/Loginform' exact component={Loginform} />
+  <Route path='/Calculator' exact component={Calculator} />
+  <Route path='/formsubmit' exact component={Getdatafirebase} />
+  <Route path='/singledata' exact component={Oneinoutdatafirebase} />
+      </Switch>
+
     </div>
   );
 }
